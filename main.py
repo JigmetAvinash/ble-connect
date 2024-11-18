@@ -1,8 +1,8 @@
-# file: inquiry.py
+# file: main.py
 # auth: Jigmet Avinash Kumar (@JigmetAvinash on Github)
 # desc: Helps in auto-unlocking of device when connected to a specific ble device
-# $Id: inquiry.py 401 2006-05-05 19:07:48Z jigmet $
-#
+# $Id: jigmet $
+# MIT License Acquired as of 2024 ©️
 
 import pyautogui
 import bluetooth

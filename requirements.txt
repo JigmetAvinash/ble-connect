@@ -1,0 +1,7 @@
+pyautogui
+pybluez
+psutil
+win10toast
+keyboard
+time
+subprocess

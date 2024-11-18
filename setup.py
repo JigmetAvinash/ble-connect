@@ -1,5 +1,8 @@
 import time
 
+credentialFile = open("resource.txt", "a" )
+credentialList = []
+
 def print_big_letters(text):
     letters = {
         'A': ['  ▓  ', ' ▓ ▓ ', '▓▓▓▓▓', '▓   ▓', '▓   ▓'],
@@ -61,6 +64,11 @@ def setup():
         print("THIS WILL BE SAVED IN PLAIN TEXT, REFER TO README.MD ON GITHUB")
         password = str(input(
             "What is your password? (Please type as you type while unlocking your machine)"))
+        credentialList.append(bleDevName)
+        credentialList.append(password)
+        credentialFile.write(bleDevName + "\n")
+        credentialFile.write(password + "\n")
+        credentialFile.close()
         for i in range(3):
             print("ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ")
         print(" Please now run main.py! SETUP SUCCESSFUL!")

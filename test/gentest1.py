@@ -12,12 +12,12 @@ from win10toast import ToastNotifier
 import keyboard
 toaster = ToastNotifier()
 
-## Program Run
+# Program Run
 print("Program run")
-## Program Run End
+# Program Run End
 
 
-## Gathering from resource file
+# Gathering from resource file
 
 Resourcefile = open("resource.txt", "r+")
 
@@ -38,9 +38,9 @@ for i in txt[2]:
         print(txt)
 
 
-
-##Unlock and Bluetooth Check function
+# Unlock and Bluetooth Check function
 namesInBle = []
+
 
 def checkBleAndUnlockSys():
     nearby_devices = bluetooth.discover_devices(
@@ -55,24 +55,10 @@ def checkBleAndUnlockSys():
         keyboard.press_and_release('esc')
         time.sleep(3)
         pyautogui.write(txt[2], interval=0.25)
+        print(txt[2])
         print("Test apss")
 
 
 while True:
     time.sleep(2)
-    for proc in psutil.process_iter():
-        if (proc.name() == "LogonUI.exe"):
-            print("Locked")
-            try:
-                checkBleAndUnlockSys()
-            finally:
-                toaster.show_toast("Unlocked using BLEUNLOCK ",
-                                "Your machine was unlocked using bluetooth device",
-                                duration=10)
-
-        
-    
-
-    
-
-
+    checkBleAndUnlockSys()
